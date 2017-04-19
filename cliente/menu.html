@@ -1,0 +1,22 @@
+ <div class="nav-side-menu">
+    <div class="brand"><strong>Trace Route</strong> </div>
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+  
+        <div class="menu-list">
+  
+            <ul id="menu-content" class="menu-content collapse out">
+
+                <div ng-repeat = "(continente,servidores) in continentes">
+                    <li data-toggle="collapse" data-target="#{{continente}}" class="collapsed" >
+                      <a href="#"><i class="fa fa-globe fa-lg"></i> {{continente}} <span class="arrow"></span></a>
+                    </li>  
+                    
+                    <ul  class="sub-menu collapse" id="{{continente}}">
+                      <li ng-repeat="servidor in servidores" ng-model="servidorSeleccionado" ng-click="selectServer(servidor.nombre,continente)">
+                          {{servidor.nombre}}</li>
+                    </ul>
+                </div>    
+
+     </div>
+</div>
+    

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" ng-app="traceRouter" ng-cloak>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trace Router</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" 
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- other css -->
+    <link rel="stylesheet" href="./css/home.css" type="text/css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.css' type='text/css' media='all' />
+ 
+</head>
+<body>
+    
+   <menu></menu>
+    
+   <div id="content">
+    <div>
+    
+        <h4 id ="servidor" > <span class="label label-info">Servidor:</span>
+        <span style="margin-left:5px;font-size:12px;" class="label label-success" ng-cloak>&nbsp{{servidorSeleccionado |uppercase}}</span>
+        </h4>
+    </div>
+    <form  ng-submit="getTraza()">
+        <div class="col-lg-6">
+        <div class="input-group form-group">
+          <input type="text" class="form-control" placeholder="Direccion destino" ng-model="site">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="submit">
+                <i class="glyphicon glyphicon-search"></i>
+            </button>
+          </span>
+        </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+   </form>  
+   
+   <form  ng-submit="getTraza()">
+        <div class="input-group form-group col-lg-3">
+          <input type="text" class="form-control" id='tiempo' placeholder="tiempoEspera" ng-model="tiempoEspera">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="submit">
+                <i class="glyphicon glyphicon-time"></i>
+            </button>
+          </span>
+        </div><!-- /input-group -->
+   
+   </form>
+  
+   <div></div>
+   <div style="clear:both"></div>
+      <div id="areaMapa"  ></div>
+   <div id ="areaDibujo" class="text-center"> </div>
+
+   </div> <!-- content -->
+       
+   
+   
+
+   <!-- google maps -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWBWjJmsH5KN45usPv1I2tUal_WLgM1QI">
+    </script>
+    <!-- d3js -->
+    <script src='https://d3js.org/d3.v3.min.js'></script>
+    <!-- AngulaJs -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+    <script  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-animate.js"></script>
+   <!-- Jquery -->
+   <script   src="https://code.jquery.com/jquery-3.2.1.min.js"   
+   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- material -->
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <!-- bar -->
+    <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js'></script>
+   
+    <!-- other js -->
+    <script type="text/javascript" src="/js/app.js"></script>
+    <script type="text/javascript" src="/js/homeCtrl.js"></script> 
+    <script type="text/javascript" src="/js/representacion.js"></script> 
+    <script type="text/javascript" src="/js/mapa.js"></script>
+    
+     
+    
+</body>
+</html>
